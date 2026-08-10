@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tug of War Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="game-wrapper">
+    <section class="game-screen">
+
+      <!-- OPENING SCREEN -->
+      <div id="openingScreen" class="screen overlay-screen opening-screen active">
+        <div class="intro-card">
+          <span class="game-badge">TUG OF WAR</span>
+          <h1>Tarik Tambang</h1>
+          <p>Tap cepat, tarik kuat, dan kalahkan RivalMaster!</p>
+        </div>
+
+        <div class="rules-card">
+          <h3>Petunjuk Permainan</h3>
+
+          <p>
+            Kamu adalah <strong>PLAYER 1</strong> berwarna biru.
+          </p>
+
+          <p>
+            Tekan tombol <strong>TAP TO PULL</strong> atau tombol
+            <strong>Space</strong> untuk menarik tali.
+          </p>
+
+          <p>
+            Rival merah akan menarik tali secara otomatis.
+          </p>
+
+          <p>
+            Game hanya berlangsung <strong>1 ronde</strong>.
+          </p>
+
+          <p>
+            Jika marker tertarik penuh ke arah biru, kamu menang.
+            Jika marker tertarik penuh ke arah merah, kamu kalah.
+          </p>
+        </div>
+
+        <button id="startButton" class="primary-button">
+          MULAI GAME
+        </button>
+      </div>
+
+      <!-- GAMEPLAY SCREEN -->
+      <div id="gameplayScreen" class="screen gameplay-screen">
+
+        <div class="match-info">
+          <span>⚡ <b>1 Ronde</b></span>
+          <span>Menang / Kalah</span>
+        </div>
+
+        <!-- PLAYER 2 -->
+        <div class="player-card player-two">
+          <div class="avatar avatar-red" aria-hidden="true">
+            <span class="hair"></span>
+            <span class="head"></span>
+            <span class="body-avatar"></span>
+          </div>
+
+          <div class="player-info">
+            <h2>PLAYER 2</h2>
+            <p>RivalMaster</p>
+
+            <div class="power-bar">
+              <div id="p2PowerBar" class="power-fill"></div>
+              <span id="p2PowerText">50%</span>
+            </div>
+          </div>
+
+          <div class="score">
+            🏆 <span id="p2Score">0</span>
+          </div>
+        </div>
+
+        <!-- AREA GAME -->
+        <div class="arena">
+          <div class="lane-lines left-lines"></div>
+          <div class="lane-lines right-lines"></div>
+
+          <div class="rope"></div>
+
+          <div class="center-line"></div>
+
+          <div id="marker" class="marker">
+            <span class="marker-arrow marker-arrow-red">‹</span>
+
+            <span id="statusText" class="marker-label">
+              CENTER
+            </span>
+
+            <span class="marker-arrow marker-arrow-blue">›</span>
+          </div>
+        </div>
+
+        <!-- PLAYER 1 -->
+        <div class="player-card player-one">
+          <div class="avatar avatar-blue" aria-hidden="true">
+            <span class="hair"></span>
+            <span class="head"></span>
+            <span class="body-avatar"></span>
+          </div>
+
+          <div class="player-info">
+            <h2>PLAYER 1</h2>
+            <p>PullKing</p>
+
+            <div class="power-bar">
+              <div id="p1PowerBar" class="power-fill"></div>
+              <span id="p1PowerText">50%</span>
+            </div>
+          </div>
+
+          <div class="score">
+            🏆 <span id="p1Score">0</span>
+          </div>
+        </div>
+
+        <!-- CONTROL PLAYER 1 -->
+        <button id="p1Button" class="main-button">
+          <span class="tap-icon">☝</span>
+          <span>TAP TO PULL</span>
+        </button>
+
+        <p class="hint">
+          TAP FAST • PULL STRONG • WIN!
+        </p>
+      </div>
+
+      <!-- CLOSING SCREEN -->
+      <div id="closingScreen" class="screen overlay-screen closing-screen">
+        <div class="final-card">
+          <span id="finalReason" class="game-badge">GAME OVER</span>
+
+          <h1 id="finalTitle">KAMU MENANG!</h1>
+
+          <p id="finalMessage">
+            Kamu berhasil menarik tali lebih kuat dari rival.
+          </p>
+
+          <div class="final-score-board">
+            <div class="final-score-item blue-score">
+              <span>Poin Kamu</span>
+              <strong id="finalUserScore">0</strong>
+            </div>
+
+            <div class="final-score-item red-score">
+              <span>Poin Rival</span>
+              <strong id="finalRivalScore">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <button id="playAgainButton" class="primary-button">
+          MAIN LAGI
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
